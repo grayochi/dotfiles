@@ -13,20 +13,20 @@ main() {
 
   ask_for_sudo
 
-  # ./xcode.sh
+  ./xcode.sh
   ./homebrew.sh
-  # ./fish.sh
-  # ./git.sh
-  # ./neovim.sh
-  # ./tmux.sh
-  # ./browser.sh
+  ./fish.sh
+  ./git.sh
+  ./neovim.sh
+  ./tmux.sh
+  ./browser.sh
 
-  # ./volta.sh
-  # ./gvm.sh
+  ./volta.sh
+  ./gvm.sh
   ./pyenv.sh
 
-  # ./misc.sh
-  # ./misc_tools.sh
+  ./misc.sh
+  ./misc_tools.sh
 }
 
 main "@"

@@ -25,7 +25,6 @@ main() {
     "Fisher"
 
   # fisher install PatrickF1/fzf.fish
-  # fisher install jethrokuan/z
 }
 
 main
