@@ -1,0 +1,21 @@
+[user]
+
+name  = grayochi
+email = puelingkil@gmail.com
+
+[alias]
+
+a   = add
+
+br  = branch -v
+nb  = branch -b
+
+co  = checkout
+
+r   = rebase
+
+st  = status
+
+u   = commit
+ua  = commit -am
+um  = commit --amend
