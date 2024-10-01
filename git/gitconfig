@@ -1,0 +1,80 @@
+[core]
+  editor = nvim
+
+[include]
+
+[color]
+
+[color "branch"]
+  current = green reverse
+  local   = green
+  remote  = yellow
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red
+  new = green
+
+[difftool]
+  prompt = true
+
+[diff]
+  tool = nvimdiff
+
+[difftool "nvimdiff"]
+  cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+
+[alias]
+  br = branch -v
+  bra = branch -a
+  brd = branch -d
+  brD = branch -D
+  brm = branch -m
+
+  co = checkout
+  cob = checkout -b
+  cor = checkout --
+
+  sw = switch
+  swc = switch -c
+
+  st = status -sb
+  sts = status
+
+  d  = diff
+  dt = difftool
+
+  cp = cherry-pick
+  cpx = cherry-pick -x
+  cpa = cherry-pick --abort
+  cpc = cherry-pick --continue
+  cps = cherry-pick --skip
+
+  rb = rebase
+  rbi = rebase -i
+  rba = rebase --abort
+  rbc = rebase --continue
+  rbs = rebase --skip
+
+  ss = stash
+  sl = stath list
+  sa = stash apply
+  sd = stash drop
+
+  rf = reflog
+
+  u = commit -m
+  ua = commit -am
+  uam = commit --amend
+
+  delete = reset --hard HEAD~1
+  undo = reset --soft HEAD
+  unstage = reset HEAD
+
+[github]
+  user = grayochi
+
+[user]
+  name = grayochi
+  email = puelingki@gmail.com
