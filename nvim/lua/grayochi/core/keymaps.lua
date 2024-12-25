@@ -1,6 +1,7 @@
 local keymap = vim.keymap.set
 
 keymap("n", "//", [[:let @/=""<CR>]], { desc = "Clear search highlights" })
+keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
 
 -- window management
 keymap("n", "sv", "<C-w>v", { desc = "Split window vertically"})

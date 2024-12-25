@@ -61,14 +61,19 @@ return {
               local bufopts = { noremap = true, silent = true, buffer = bufnr }
               keymap('n', 'gt', buf.hover, bufopts)
               keymap('n', 'gD', buf.declaration, bufopts)
-              keymap('n', 'gd', ':Telescope lsp_definitions<CR>', bufopts)
-              keymap('n', 'gi', ':Telescope lsp_implementations<CR>', bufopts)
-              keymap('n', 'gT', ':Telescope lsp_type_definitions<CR>', bufopts)
-              keymap('n', 'gr', ':Telescope lsp_references<CR>', bufopts)
+              keymap('n', 'gd', ':FzfLua lsp_definitions<CR>', bufopts)
+              keymap('n', 'gi', ':FzfLua lsp_implementations<CR>', bufopts)
+              keymap('n', 'gT', ':FzfLua lsp_typedefs<CR>', bufopts)
+              keymap('n', 'gr', ':FzfLua lsp_references<CR>', bufopts)
               keymap('n', 'gf', buf.format, bufopts)
               keymap('n', '<F2>', buf.rename, bufopts)
             end
             ,
+          })
+        end,
+        ['ts_ls'] = function()
+          lspconfig.ts_ls.setup({
+            filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
           })
         end,
         ['lua_ls'] = function()
@@ -89,9 +94,17 @@ return {
             },
           })
         end,
-        ['ts_ls'] = function()
-          lspconfig.ts_ls.setup({
-             filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+        ['cssls'] = function()
+          lspconfig.cssls.setup({
+            settings = {
+              css = {
+                vaildate = true,
+                lint = {
+                  unknownAtRules = 'ignore'
+                }
+              }
+            }
+
           })
         end
       },
@@ -153,7 +166,5 @@ return {
     keymap('n', 'gl', function()
       lint.try_lint()
     end, { desc = 'Trigger linting for current file' })
-
-    vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap=true, silent=true })
   end
 }
